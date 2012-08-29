@@ -1,0 +1,102 @@
+/* Git-Web-Vis code-block style sheet. Alex Ponting (c) 2012
+/* Adapted from Stu Phillips' simple CSS picture gallery.*/
+
+/* If everything works the way I want it to, this will create frame that allows
+ * a generic HTML block to be visualized.  We'll be using it for viewing syntax-
+ * highlighted code snippets, but in theory you could put whatever you want in a
+ * "<div id=highlight> and have it work. */
+
+/* Basic link text style.  Once you go #000...*/
+, a:visited, a:hover, a:active
+{
+  color:#000;
+}
+
+/* Code-block container div*/
+#code-block 
+{
+  width: 40em;
+  background: #444;
+  border: 1em solid #272727;
+  margin: 0 auto;
+}
+
+/* Remove the padding margin and bullets from the list. 
+ * The margin size, rather than a set 'height,' defines the height of #code-block." 
+ * I have no idea why that is necessary. */
+.frames 
+{
+  padding: 0; 
+  margin: 0 0 25em 0;
+  list-style-type: none; 
+  position: relative;
+  width: auto;
+}
+
+/* Button styling.*/
+.frames li a, .frames li a:visited 
+{
+  font-size: 16px;
+  font-family: monospace;
+  float: left; 
+  text-decoration: none; 
+  color: #000; 
+  background: #fff; 
+  text-align: center; 
+  width: auto;
+  padding: 0 1em;
+  height: 1.5em; 
+  line-height: 1.5em;
+
+  /*Fancy button borders?*/
+  border-style: solid;
+  border-color: #272727;
+  border-top-width: 0;
+  border-bottom-width: 1em;
+  border-left-width: 0;
+  border-right-width: 1em;
+}
+
+/* putting back in */
+.frames li
+{
+    float: left;
+}
+
+/* Positioning of the code-containing divs.*/
+.frames li a div.highlight 
+{
+  position: absolute;
+  background-color: #444;
+  text-align: left;
+  top: 2.5em;
+  left: 0;
+  visibility: hidden; 
+  border: 0;
+  max-width: 40em;
+  min-height: 22.5em;
+  max-height: 22.5em;
+  overflow: auto;
+}
+
+/* Button hover color.*/
+.frames li a:hover
+{
+    background: #bbb;
+}
+
+/* Active/focus colors for the buttons (required for IE) */
+.frames li a:active, .frames li a:focus 
+{
+    background: #444; 
+    color: #fff;
+    outline: 0;
+}
+
+/* Code-containing divs become visible when corresponding button is clicked.*/
+.frames li a:active div.highlight, .frames li a:focus div.highlight 
+{
+    visibility:visible;
+    outline:0;
+}
+

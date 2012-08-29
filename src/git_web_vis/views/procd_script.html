@@ -1,0 +1,21 @@
+<div class="highlight"><pre><span class="p">(</span><span class="kd">ns </span><span class="nv">git-web-vis.views.script</span>
+  
+  <span class="p">(</span><span class="ss">:require</span> <span class="p">[</span><span class="nv">git-web-vis.views.common</span> <span class="ss">:as</span> <span class="nv">cmn</span><span class="p">])</span>
+  
+  <span class="p">(</span><span class="ss">:use</span> <span class="p">[</span><span class="nv">noir.core</span> <span class="ss">:only</span> <span class="p">[</span><span class="nv">defpartial</span><span class="p">]]</span>
+        <span class="p">[</span><span class="nv">hiccup.page-helpers</span><span class="p">]))</span>
+
+
+<span class="p">(</span><span class="k">def </span><span class="nv">test-snip</span>
+  <span class="p">(</span><span class="nb">slurp </span><span class="s">&quot;/home/eleglac/Code/git-web-vis/src/git_web_vis/views/script.clj&quot;</span><span class="p">))</span>
+
+<span class="p">(</span><span class="nf">defpartial</span> <span class="nv">make-code-block</span> <span class="p">[</span><span class="nv">snippets</span><span class="p">]</span>
+  <span class="p">[</span><span class="ss">:div#code-block</span>
+    <span class="p">[</span><span class="ss">:ul</span> <span class="p">{</span><span class="ss">:class</span> <span class="s">&quot;frames&quot;</span><span class="p">}</span>
+      <span class="p">(</span><span class="nf">map-indexed</span>
+        <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nb">index </span><span class="nv">snippet</span><span class="p">]</span> 
+          <span class="p">[</span><span class="ss">:li</span> 
+            <span class="p">[</span><span class="ss">:a</span> <span class="p">{</span><span class="ss">:href</span> <span class="s">&quot;#&quot;</span> <span class="ss">:tabindex</span> <span class="s">&quot;1&quot;</span><span class="p">}</span> <span class="p">(</span><span class="nb">str </span><span class="nv">index</span><span class="p">)</span> 
+            <span class="nv">snippet</span><span class="p">]])</span>
+        <span class="nv">snippets</span><span class="p">)]])</span>
+</pre></div>

@@ -1,0 +1,14 @@
+<div class="highlight"><pre><span class="p">(</span><span class="kd">ns </span><span class="nv">git-web-vis.views.common</span>
+  <span class="p">(</span><span class="ss">:use</span> <span class="p">[</span><span class="nv">noir.core</span> <span class="ss">:only</span> <span class="p">[</span><span class="nv">defpartial</span><span class="p">]]</span>
+        <span class="p">[</span><span class="nv">hiccup.page-helpers</span> <span class="ss">:only</span> <span class="p">[</span><span class="nv">include-css</span> <span class="nv">html5</span><span class="p">]]))</span>
+
+<span class="p">(</span><span class="nf">defpartial</span> <span class="nv">layout</span> <span class="p">[</span><span class="o">&amp;</span> <span class="nv">content</span><span class="p">]</span>
+  <span class="p">(</span><span class="nf">html5</span>
+    <span class="p">[</span><span class="ss">:head</span>
+      <span class="p">[</span><span class="ss">:title</span> <span class="s">&quot;The Git Visualizer&quot;</span><span class="p">]</span>
+      <span class="p">(</span><span class="nf">include-css</span> <span class="s">&quot;/css/album.css&quot;</span><span class="p">)</span>
+      <span class="p">(</span><span class="nf">include-css</span> <span class="s">&quot;/css/code.css&quot;</span><span class="p">)]</span>
+
+      <span class="p">[</span><span class="ss">:body</span>
+        <span class="p">[</span><span class="ss">:div#wrapper</span> <span class="nv">content</span><span class="p">]]))</span>
+</pre></div>

@@ -1,0 +1,16 @@
+<div class="highlight"><pre><span class="p">(</span><span class="kd">ns </span><span class="nv">git-web-vis.views.frame</span>
+  
+  <span class="p">(</span><span class="ss">:require</span> <span class="p">[</span><span class="nv">clojure.string</span>           <span class="ss">:as</span> <span class="nv">s</span><span class="p">]</span>
+            <span class="p">[</span><span class="nv">git-web-vis.views.common</span> <span class="ss">:as</span> <span class="nv">cmn</span><span class="p">]</span>
+            <span class="p">[</span><span class="nv">git-web-vis.views.script</span> <span class="ss">:as</span> <span class="nv">scr</span><span class="p">])</span>
+  
+  <span class="p">(</span><span class="ss">:use</span> <span class="p">[</span><span class="nv">noir.core</span> <span class="ss">:only</span> <span class="p">[</span><span class="nv">defpage</span><span class="p">]]</span>
+        <span class="p">[</span><span class="nv">hiccup.core</span> <span class="ss">:only</span> <span class="p">[</span><span class="nv">html</span><span class="p">]]))</span>
+
+<span class="p">(</span><span class="k">def </span><span class="nv">testcode</span> 
+  <span class="p">(</span><span class="nb">take </span><span class="mi">5</span> <span class="p">(</span><span class="nb">repeat </span><span class="p">(</span><span class="nb">slurp </span><span class="s">&quot;/home/eleglac/Code/git-web-vis/src/git_web_vis/views/frame.html&quot;</span><span class="p">))))</span>
+
+<span class="p">(</span><span class="nf">defpage</span> <span class="s">&quot;/&quot;</span> <span class="p">[]</span>
+  <span class="p">(</span><span class="nf">cmn/layout</span>
+    <span class="p">(</span><span class="nf">scr/make-code-block</span> <span class="nv">testcode</span><span class="p">)))</span>
+</pre></div>
