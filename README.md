@@ -1,6 +1,6 @@
 # git-web-vis
 
-A website written in noir. 
+Originally intended to be a way to quickly flip between sequences of git diffs; the project got as far as the CSS visualizing bit, but stalled out at the git integration bit.
 
 ## Usage
 
